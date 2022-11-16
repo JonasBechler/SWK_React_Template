@@ -4,7 +4,7 @@ import apiRegister from '../../api_handler/register';
 
 
 
-export default function RegisterWidget({ details, setPage }) {
+export default function RegisterWidget({ details, setPage, config }) {
 	const blank_user = _ => {
         
 		let user = Object.assign({}, details);
@@ -47,7 +47,7 @@ export default function RegisterWidget({ details, setPage }) {
 			return
 		}
 
-		apiRegister.with_data(user)
+		apiRegister.with_data(config, user)
 			.then(response => {
 				if (response.status === 200){
 					setPage(0)

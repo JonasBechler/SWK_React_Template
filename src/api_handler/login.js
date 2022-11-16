@@ -1,6 +1,5 @@
-import config from '../../../../config.json'
 
-function login_with_credentials(email, password) {
+function login_with_credentials(config, email, password) {
 
     // do a post?
     var url = new URL(`${config.device_ip}:${config.konrad_port}/api/login`)
@@ -14,7 +13,7 @@ function login_with_credentials(email, password) {
     })    
 }
 
-function login_with_konstanz() {
+function login_with_konstanz(config) {
 
     // cant do post because of redirect
     location.href = `${config.device_ip}:${config.konrad_port}/api/login_kn`

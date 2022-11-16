@@ -1,6 +1,5 @@
-import config from '../../../../config.json'
 
-function logout() {
+function logout(config) {
 
     location.href = `${config.device_ip}:${config.konrad_port}/api/logout`
     

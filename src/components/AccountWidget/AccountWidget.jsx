@@ -3,7 +3,7 @@ import AccountDetails from '../AccountDetails/AccountDetails'
 import apiLogout from '../../api_handler/logout';
 
 
-export default function AccountWidget({details, user, setPage}) {
+export default function AccountWidget({details, user, setPage, config}) {
     
     function loginHandler(e) {
 
@@ -16,7 +16,7 @@ export default function AccountWidget({details, user, setPage}) {
 
         e.preventDefault();
         
-        apiLogout.logout()
+        apiLogout.logout(config)
 
     }
     return (

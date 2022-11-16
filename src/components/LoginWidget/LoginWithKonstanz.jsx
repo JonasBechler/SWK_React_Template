@@ -2,13 +2,13 @@ import React from 'react'
 import apiLogin from '../../api_handler/login.js';
 
 
-export default function LoginWithKonstanz () {
+export default function LoginWithKonstanz ({ config }) {
   
     function loginHandlerKonstanz(e){
         
         e.preventDefault();
         
-        apiLogin.with_konstanz()
+        apiLogin.with_konstanz(config)
         
     }
 

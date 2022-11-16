@@ -1,6 +1,5 @@
-import config from '../../../../config.json'
 
-function register_with_data(data) {
+function register_with_data(config, data) {
 
     var url = new URL(`${config.device_ip}:${config.konrad_port}/api/register`)
     var params = data

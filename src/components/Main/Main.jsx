@@ -5,7 +5,7 @@ import LoginWidget from "../LoginWidget/LoginWidget";
 import RegisterWidget from "../ReqisterWidget/RegisterWidget";
 import AccountWidget from '../AccountWidget/AccountWidget';
 
-export default function Main({config}) {
+export default function Main({name, icon, config}) {
     const [page, setPage] = useState(0);
 
 	const [details, setDetails] = useState();
@@ -46,13 +46,13 @@ export default function Main({config}) {
 	const get_page_content = _ => {
 		if (details){
 			if (page === 0){
-				return <AccountWidget details={details} user={user} setPage={setPage}></AccountWidget>
+				return <AccountWidget details={details} user={user} setPage={setPage} config={config}></AccountWidget>
 			}
 			else if (page === 1){
-				return <LoginWidget setPage={setPage}></LoginWidget>
+				return <LoginWidget setPage={setPage} config={config}></LoginWidget>
 			}
 			else if (page === 2){
-				return <RegisterWidget details={details} setPage={setPage}></RegisterWidget>
+				return <RegisterWidget details={details} setPage={setPage} config={config}></RegisterWidget>
 			}
 		}
 	}
@@ -61,7 +61,7 @@ export default function Main({config}) {
 
 		<div className='Fill Column'>
 
-			<Header setPage={setPage}></Header>
+			<Header name={name} icon={icon} setPage={setPage}></Header>
 
 			<div className='Spacer'></div>
 
