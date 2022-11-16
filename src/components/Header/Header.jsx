@@ -1,7 +1,6 @@
 import React from 'react'
-import image from './Icon/Bicycle.png'
 
-export default function Header({ setPage }) {
+export default function Header({ name, image_path, setPage }) {
 
 	// go to main page
 	function onClickHandler(e) {
@@ -12,9 +11,9 @@ export default function Header({ setPage }) {
 	return (
 		<div className='KonstanzRed Row H_Center' onClick={onClickHandler}>
 
-			<img src={image} alt="Bicycle" ></img>
+			<img src={image_path} alt="Bicycle" ></img>
 			<div className='Text V_Center' style={{ "fontSize": "60px" }}>
-				Konrad
+				{name}
 			</div>
 
 		</div>
