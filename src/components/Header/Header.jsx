@@ -15,10 +15,10 @@ export default function Header({ name, icon, setPage }) {
 		<div className='KonstanzRed Row H_Center' onClick={onClickHandler}>
 
 			<div className='V_Center H_Center' style={{"padding":"10px"}}>
-				<img width={100} height={100} src={icon} alt="Icon" ></img>
+				<img width={75} height={75} src={icon} alt="Icon" ></img>
 			</div>
 			
-			<div className='Text V_Center' style={{ "fontSize": "60px" }}>
+			<div className='Text V_Center' style={{ "fontSize": "30px" }}>
 				{name}
 			</div>
 
