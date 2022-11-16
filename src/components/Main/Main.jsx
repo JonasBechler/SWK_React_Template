@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 
-import config from "../../../config.json"
-import Header from "./components/Header/Header";
-import LoginWidget from "./components/LoginWidget/LoginWidget";
-import RegisterWidget from "./components/ReqisterWidget/RegisterWidget";
-import AccountWidget from './components/AccountWidget/AccountWidget';
-import './App.css'
+import config from "../../../../../config.json"
+import Header from "../Header/Header";
+import LoginWidget from "../LoginWidget/LoginWidget";
+import RegisterWidget from "../ReqisterWidget/RegisterWidget";
+import AccountWidget from '../AccountWidget/AccountWidget';
 
-function App() {
-	const [page, setPage] = useState(0);
+export default function Main() {
+    const [page, setPage] = useState(0);
 
 	const [details, setDetails] = useState();
 	const [user, setUser] = useState();
@@ -18,7 +17,7 @@ function App() {
 		if (page === 0)
 		{		
 			//fetch user
-			fetch(`${config.device_ip}:${config.konrad_port}/api/user`, {
+			fetch(`${config.device_ip}:${config.handyticket_port}/api/user`, {
 				// fetch won't send cookies unless you set credentials
 				credentials: 'include'
 			})
@@ -68,6 +67,7 @@ function App() {
 			<div className='Spacer'></div>
 
 			{
+                //console.log("hi")
 				get_page_content()
 			}
 
@@ -79,4 +79,3 @@ function App() {
 	);
 }
 
-export default App;
