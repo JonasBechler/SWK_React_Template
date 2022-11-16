@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 
-import config from "../../../../../config.json"
 import Header from "../Header/Header";
 import LoginWidget from "../LoginWidget/LoginWidget";
 import RegisterWidget from "../ReqisterWidget/RegisterWidget";
 import AccountWidget from '../AccountWidget/AccountWidget';
 
-export default function Main() {
+export default function Main({config}) {
     const [page, setPage] = useState(0);
 
 	const [details, setDetails] = useState();
