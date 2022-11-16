@@ -2,7 +2,7 @@
 function login_with_credentials(config, email, password) {
 
     // do a post?
-    var url = new URL(`${config.device_ip}:${config.konrad_port}/api/login`)
+    var url = new URL(`${config.device_ip}:${config.port}/api/login`)
     var params = {email: email, password: password}
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
 
@@ -16,7 +16,7 @@ function login_with_credentials(config, email, password) {
 function login_with_konstanz(config) {
 
     // cant do post because of redirect
-    location.href = `${config.device_ip}:${config.konrad_port}/api/login_kn`
+    location.href = `${config.device_ip}:${config.port}/api/login_kn`
        
 }
 

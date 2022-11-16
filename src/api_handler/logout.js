@@ -1,7 +1,7 @@
 
 function logout(config) {
 
-    location.href = `${config.device_ip}:${config.konrad_port}/api/logout`
+    location.href = `${config.device_ip}:${config.port}/api/logout`
     
 }
 

@@ -1,7 +1,7 @@
 
 function register_with_data(config, data) {
 
-    var url = new URL(`${config.device_ip}:${config.konrad_port}/api/register`)
+    var url = new URL(`${config.device_ip}:${config.port}/api/register`)
     var params = data
     Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
 

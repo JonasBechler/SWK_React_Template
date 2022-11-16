@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import LoginWidget from "../LoginWidget/LoginWidget";
 import RegisterWidget from "../ReqisterWidget/RegisterWidget";
 import AccountWidget from '../AccountWidget/AccountWidget';
+import apiUser from '../../api_handler/user'
 
 export default function Main({name, icon, config}) {
     const [page, setPage] = useState(0);
@@ -16,11 +17,7 @@ export default function Main({name, icon, config}) {
 		if (page === 0)
 		{		
 			//fetch user
-			fetch(`${config.device_ip}:${config.handyticket_port}/api/user`, {
-				// fetch won't send cookies unless you set credentials
-				credentials: 'include'
-			})
-				.then(response => response.json())
+			apiUser.get_user(config)
 				.then(response => {
 					//check if is empty
 					let response_lenght = Object.keys(response).length
