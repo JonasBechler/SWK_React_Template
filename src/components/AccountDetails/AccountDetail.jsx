@@ -17,7 +17,7 @@ export default function AccountDetail({name, title, initial_value, onChange, rea
         </div>
         
         <div className='Spacer'></div>  
-        <input className='Text TextInput' type="text" value={value} onChange={e => onChangeHandler(e)} readOnly={readOnly} disabled={false}/>
+        <input className='TextInput AccountInput' type="text" value={value} onChange={e => onChangeHandler(e)} readOnly={readOnly} disabled={false}/>
          
         
       </div>

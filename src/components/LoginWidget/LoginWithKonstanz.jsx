@@ -14,7 +14,7 @@ export default function LoginWithKonstanz ({ config }) {
 
     return (
         <div>
-            <div className='H_Center'>Or log in with</div>
+            <div className='H_Center Groupbox_Head'>Or log in with</div>
             
             <div className='Groupbox'>
                 

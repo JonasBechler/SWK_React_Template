@@ -58,22 +58,33 @@ html,body {
 }
 
 .Groupbox {
-    padding: 10px;
+    padding: 5px;
     margin: 10px;
     margin-top: 0px;
     border: 1px solid #838383;
     border-radius: 5px;
     background-color: white;
 }
+.Groupbox_Head{
+    font-size: 15px;
+}
 
 .Text {
-    font-size: 15px;
+    font-size: 14px;
     
 }
 
 .TextInput {
-    padding: 5px;
-    margin: 5px;
+    padding: 3px;
+    margin: 3px;
+}
+
+.LoginInput {
+    width: 220px;
+}
+
+.AccountInput {
+    width: 180px;
 }
 
 .Button {

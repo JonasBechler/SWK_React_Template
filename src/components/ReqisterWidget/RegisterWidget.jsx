@@ -59,6 +59,7 @@ export default function RegisterWidget({ details, setPage, config }) {
     return (
 		<div className='H_Center'>
 			<div className='Groupbox' style={{"backgroundColor": "#f5f5f5"}}>
+				<div className='H_Center Text' style={{"fontSize":"20px"}}>Bitte geben Sie Ihre Daten ein</div>
 
 				{(error === 200)?(
 					<div></div>
