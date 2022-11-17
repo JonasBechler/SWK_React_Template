@@ -47,8 +47,11 @@ export default function AccountWidget({details, user, setPage, config}) {
                 ):(
 
                     <div>
+                        <div className='Spacer'></div>
                         <div className='Text'>Hello, you are currently NOT logged in.</div>
                         
+                        <div className='Spacer'></div>
+                        <div className='Spacer'></div>
                         <div className='Spacer'></div>
                         
                         <div className='H_Center'>
