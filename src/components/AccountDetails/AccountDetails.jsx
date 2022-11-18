@@ -7,7 +7,7 @@ export default function AccountDetails({details, user, onChange, readOnly}) {
     return (
         <div className='Column Groupbox'>
             
-            <div className='H_Center Text' style={{"fontSize":"20px"}}>Account Details</div>
+            <div className='H_Center Text' style={{"fontSize":"20px"}}>accountspezifische Daten</div>
 
             {Object.entries(details).map(detail => {
                 if (detail[0] === "password" && readOnly){return <div key={"password"}></div>}

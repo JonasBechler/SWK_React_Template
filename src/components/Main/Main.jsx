@@ -43,13 +43,13 @@ export default function Main({name, icon, config}) {
 	const get_page_content = _ => {
 		if (details){
 			if (page === 0){
-				return <AccountWidget details={details} user={user} setPage={setPage} config={config}></AccountWidget>
+				return <AccountWidget className='Main_Item' details={details} user={user} setPage={setPage} config={config}></AccountWidget>
 			}
 			else if (page === 1){
-				return <LoginWidget setPage={setPage} config={config}></LoginWidget>
+				return <LoginWidget className='Main_Item' setPage={setPage} config={config}></LoginWidget>
 			}
 			else if (page === 2){
-				return <RegisterWidget details={details} setPage={setPage} config={config}></RegisterWidget>
+				return <RegisterWidget className='Main_Item' details={details} setPage={setPage} config={config}></RegisterWidget>
 			}
 		}
 	}

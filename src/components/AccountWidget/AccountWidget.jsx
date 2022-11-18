@@ -20,13 +20,13 @@ export default function AccountWidget({details, user, setPage, config}) {
 
     }
     return (
-        <div className='H_Center'>
-            <div className='Groupbox' style={{"backgroundColor": "#f5f5f5"}}>
+        <div className='H_Center '>
+            <div className='Groupbox Main_Item' style={{"backgroundColor": "#f5f5f5"}}>
                 {(user)?(
                     
                     <div>
                         <div className='H_Center'>
-                            <div className='Text'>Hello, you are currently logged in as {user.first_name} {user.last_name}.</div>
+                            <div className='Text'>Hallo, {user.first_name} {user.last_name}.</div>
                         </div>
 
                         <div className='Spacer'></div>
@@ -40,7 +40,7 @@ export default function AccountWidget({details, user, setPage, config}) {
                         <div className='Spacer'></div>
 
                         <div className='H_Center'>
-                            <button className="Button Text" onClick={logoutHandler}>Log out</button>
+                            <button className="Button Text" onClick={logoutHandler}>Abmelden</button>
                         </div>
                     </div>
 
@@ -48,14 +48,14 @@ export default function AccountWidget({details, user, setPage, config}) {
 
                     <div>
                         <div className='Spacer'></div>
-                        <div className='Text'>Hello, you are currently NOT logged in.</div>
+                        <div className='Text H_Center'>Hallo, melden Sie sich hier an.</div>
                         
                         <div className='Spacer'></div>
                         <div className='Spacer'></div>
                         <div className='Spacer'></div>
                         
                         <div className='H_Center'>
-                            <button className="Button Text" onClick={loginHandler}>Login or Register</button>
+                            <button className="Button Text" onClick={loginHandler}>Anmelden oder Registrieren</button>
                         </div>
                     </div>
 

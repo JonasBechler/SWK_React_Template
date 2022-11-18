@@ -6,7 +6,7 @@ export default function LoginWidget({ setPage, config }) {
 
 	return (
 		<div className='H_Center'>
-			<div className='Groupbox' style={{"backgroundColor": "#f5f5f5"}}>
+			<div className='Groupbox Main_Item' style={{"backgroundColor": "#f5f5f5"}}>
 
 				<LoginWithAccountWidget setPage={setPage} config={config}></LoginWithAccountWidget>
 

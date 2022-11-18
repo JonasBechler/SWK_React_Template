@@ -33,6 +33,10 @@ html,body {
     
 }
 
+.Main_Item {
+    width: 90%; 
+}
+
 .V_Center{
     display: flex;
     flex-direction: column;

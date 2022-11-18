@@ -39,7 +39,7 @@ export default function LoginWithAccountWidget ({ setPage, config }) {
 	
 	return (
 		<div>
-			<div className='H_Center Groupbox_Head'>Log in with account</div>
+			<div className='H_Center Groupbox_Head'>Anmelden</div>
 			
 			<div className='Groupbox'>
 				{(error === 200)?(
@@ -51,20 +51,23 @@ export default function LoginWithAccountWidget ({ setPage, config }) {
 				)}
 				
 				<form className='Column' onSubmit={loginHandler}>
-
-					<input className='TextInput LoginInput' type="text" placeholder="Email Address" value={email} onChange={e => setEmail(e.target.value)}></input>
-					<input className='TextInput LoginInput' type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}></input>
-
+					<div className='H_Center'>
+						<input className='TextInput LoginInput' type="text" placeholder="Email Address" value={email} onChange={e => setEmail(e.target.value)}></input>
+					</div>	
+					<div className='H_Center'>
+						<input className='TextInput LoginInput' type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}></input>
+					</div>
+					
 					<div className='Spacer'></div>
 
 					<div className='H_Center'>
-						<button className="Button Text">Login</button>
+						<button className="Button Text">einloggen</button>
 					</div>
 					
 				</form>
 
 				<div className='H_Center'>
-                    <button className='Link' onClick={showRegisterHandler}>or register</button>
+                    <button className='Link' onClick={showRegisterHandler}>oder Registrieren?</button>
                 </div>
 			</div>
 		</div>
