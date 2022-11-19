@@ -3,7 +3,7 @@ import AccountDetails from '../AccountDetails/AccountDetails'
 import apiLogout from '../../api_handler/logout';
 
 
-export default function AccountWidget({details, user, setPage, config}) {
+export default function AccountWidget({title, details, user, setPage, config}) {
     
     function loginHandler(e) {
 
@@ -40,7 +40,7 @@ export default function AccountWidget({details, user, setPage, config}) {
 
                         <div className='H_Center'>
 
-                            <AccountDetails details={details} user={user} readOnly={true}></AccountDetails>
+                            <AccountDetails title={title} details={details} user={user} readOnly={true}></AccountDetails>
 
                         </div>
 

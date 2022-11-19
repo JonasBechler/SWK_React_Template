@@ -2,12 +2,12 @@ import React from 'react'
 import AccountDetail from './AccountDetail'
 
 
-export default function AccountDetails({details, user, onChange, readOnly}) {
+export default function AccountDetails({title, details, user, onChange, readOnly}) {
     
     return (
         <div className='Column Groupbox'>
             
-            <div className='H_Center Text' style={{"fontSize":"15px"}}>accountspezifische Daten</div>
+            <div className='H_Center Text' style={{"fontSize":"15px"}}>{title?(title):("accountspezifische Daten")}</div>
 
             {Object.entries(details).map(detail => {
                 if (detail[0] === "password" && readOnly){return <div key={"password"}></div>}
