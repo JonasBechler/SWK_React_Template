@@ -18,7 +18,7 @@ export default function Header({ name, icon, setPage }) {
 				<img width={75} height={75} src={icon} alt="Icon" ></img>
 			</div>
 			
-			<div className='Text V_Center' style={{ "fontSize": "30px" }}>
+			<div className='Text V_Center' style={{ "fontSize": "40px" }}>
 				{name}
 			</div>
 

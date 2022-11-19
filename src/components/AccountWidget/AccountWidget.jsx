@@ -25,9 +25,16 @@ export default function AccountWidget({details, user, setPage, config}) {
                 {(user)?(
                     
                     <div>
-                        <div className='H_Center'>
-                            <div className='Text'>Hallo, {user.first_name} {user.last_name}.</div>
-                        </div>
+                        {user.first_name?(
+                            <div className='H_Center'>
+                                <div className='Text' style={{"fontSize":"15px"}}>Hallo, {user.first_name} {user.last_name}.</div>
+                            </div>
+                        ):(
+                            <div className='H_Center'>
+                                <div className='Text'>Hallo, {user.email}.</div>
+                            </div>
+                        )}
+                        
 
                         <div className='Spacer'></div>
 
