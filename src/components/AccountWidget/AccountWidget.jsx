@@ -49,6 +49,18 @@ export default function AccountWidget({title, details, user, setPage, config}) {
                         <div className='H_Center'>
                             <button className="Button Text" onClick={logoutHandler}>Abmelden</button>
                         </div>
+
+                        {/*FA_ID*/}
+                        {user.first_name?(
+                            <div className='H_Center'>
+                                <div className='Text' style={{"fontSize":"15px"}}>Hallo, {user.first_name} {user.last_name}.</div>
+                            </div>
+                        ):(
+                            <div className='H_Center'>
+                                <div className='Text'>Hallo, {user.email}.</div>
+                            </div>
+                        )}
+
                     </div>
 
                 ):(
