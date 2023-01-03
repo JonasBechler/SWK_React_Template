@@ -1,22 +1,14 @@
 import React, { useState } from 'react'
 import AccountDetails from '../AccountDetails/AccountDetails'
-import apiRegister from '../../api_handler/register';
 
 
 
-export default function RegisterWidget({ details, setPage, config }) {
-	const blank_user = _ => {
-        
-		let user = Object.assign({}, details);
-		Object.keys(user).forEach(key => {
-			user[key] = ""
-		});
-        return user
-    }
+export default function RegisterWidget({ details, templateUser, setPage, config }) {
 
-	const [user, setUser] = useState(blank_user())
+	const server_requests = require('../../server_handler/server_requests')(config)
+
+	const [user, setUser] = useState(Object.assign({}, templateUser))
 	const [error, setError] = useState(200)
-
 
 	function onChange(detail){
 		let user_temp = Object.assign({}, user);
@@ -29,8 +21,14 @@ export default function RegisterWidget({ details, setPage, config }) {
 	const is_valid = user => {
 
 		let valid = true
-		Object.values(user).forEach(value => {
-			if (value==="") {
+		Object.keys(user).forEach(key => {
+			if (key==="fusionauth_id"){
+				return;
+			}
+			if (key==="uuid"){
+				return;
+			}
+			if (user[key]==="") {
 				valid = false
 			}
 		})
@@ -47,7 +45,7 @@ export default function RegisterWidget({ details, setPage, config }) {
 			return
 		}
 
-		apiRegister.with_data(config, user)
+		server_requests.register(user)
 			.then(response => {
 				if (response.status === 200){
 					setPage(0)

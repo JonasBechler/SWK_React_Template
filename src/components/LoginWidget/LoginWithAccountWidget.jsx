@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import apiLogin from '../../api_handler/login';
 
 
 export default function LoginWithAccountWidget ({ setPage, config }) {
+
+	const server_requests = require('../../server_handler/server_requests')(config)
 
 	const [email, setEmail] = useState("")
 	const [password, setPassword] = useState("")
@@ -19,7 +20,7 @@ export default function LoginWithAccountWidget ({ setPage, config }) {
 		setEmail("");
 		setPassword("");
 
-		apiLogin.with_credentials(config, email, password)
+		server_requests.login.with_credentials(email, password)
 		.then(response => {
 			if (response.status === 200){
 				setPage(0)

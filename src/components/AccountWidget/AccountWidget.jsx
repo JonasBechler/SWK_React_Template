@@ -1,9 +1,13 @@
 import React from 'react'
 import AccountDetails from '../AccountDetails/AccountDetails'
-import apiLogout from '../../api_handler/logout';
+
+
 
 
 export default function AccountWidget({title, details, user, setPage, config}) {
+
+    const server_requests = require('../../server_handler/server_requests')(config)
+
     
     function loginHandler(e) {
 
@@ -16,7 +20,15 @@ export default function AccountWidget({title, details, user, setPage, config}) {
 
         e.preventDefault();
         
-        apiLogout.logout(config)
+        server_requests.logout()
+
+    }
+
+    function connectKonstanzHandler(e) {
+
+        e.preventDefault();
+        
+        server_requests.login.with_konstanz()
 
     }
     return (
@@ -44,22 +56,22 @@ export default function AccountWidget({title, details, user, setPage, config}) {
 
                         </div>
 
+                        {/*FA_ID*/}
+                        {user.fusionauth_id?(
+                            <div></div>
+                        ):(
+                            <div className='H_Center'>
+                                <button className='Button Text' id='KonstanzRed' onClick={connectKonstanzHandler}>Konstanz-Login verbinden</button>
+                            </div>
+                        )}
+
                         <div className='Spacer'></div>
 
                         <div className='H_Center'>
                             <button className="Button Text" onClick={logoutHandler}>Abmelden</button>
                         </div>
 
-                        {/*FA_ID*/}
-                        {user.first_name?(
-                            <div className='H_Center'>
-                                <div className='Text' style={{"fontSize":"15px"}}>Hallo, {user.first_name} {user.last_name}.</div>
-                            </div>
-                        ):(
-                            <div className='H_Center'>
-                                <div className='Text'>Hallo, {user.email}.</div>
-                            </div>
-                        )}
+                        
 
                     </div>
 
