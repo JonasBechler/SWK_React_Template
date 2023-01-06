@@ -56,8 +56,8 @@ export default function AccountWidget({title, details, user, setPage, config}) {
 
                         </div>
 
-                        {/*FA_ID*/}
-                        {user.fusionauth_id?(
+                        
+                        {user.knlogin_id?(
                             <div></div>
                         ):(
                             <div className='H_Center'>

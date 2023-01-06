@@ -83,6 +83,10 @@ html,body {
     margin: 3px;
 }
 
+.TextSmall {
+    font-size: xx-small;
+}
+
 .LoginInput {
     width: 220px;
 }

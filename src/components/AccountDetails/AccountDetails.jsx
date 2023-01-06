@@ -11,10 +11,10 @@ export default function AccountDetails({title, details, user, onChange, readOnly
 
             {Object.entries(details).map(detail => {
                 if (detail[0] === "password" && readOnly){return <div key={detail[0]}></div>}
-                else if (detail[0] === "fusionauth_id" && !readOnly){return <div key={detail[0]}></div>}
+                else if (detail[0] === "knlogin_id" && !readOnly){return <div key={detail[0]}></div>}
                 else if (detail[0] === "uuid" && !readOnly){return <div key={detail[0]}></div>}
 
-                return <AccountDetail key={detail[0]} name={detail[0]} title={detail[1]} initial_value={user[detail[0]]} onChange={onChange} readOnly={readOnly}></AccountDetail>
+                return <AccountDetail key={detail[0]} name={detail[0]} title={detail[1]} user={user} onChange={onChange} readOnly={readOnly}></AccountDetail>
             })}
             
         </div>
