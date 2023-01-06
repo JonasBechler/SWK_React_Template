@@ -16,7 +16,7 @@ module.exports = function(config){
     function login_with_konstanz() {
 
         // can't do post because of redirect
-        location.href = `${config.device_ip}:${config.port}/api/login_kn`
+        location.href = `${config.device_ip}:${config.port}/kn/login`
         
     }
     
