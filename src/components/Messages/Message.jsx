@@ -14,6 +14,8 @@ export default function Message({ content, setContent }) {
         return (
             
             <div id='message'>
+                <div className='Spacer'></div>
+                <div className='Spacer'></div>
                 <div className='Column Groupbox' style={{"margin":"30px", "padding":"20px"}}>
 
                     {content}
