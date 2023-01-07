@@ -25,7 +25,7 @@ export default function RegisterWidget({ details, templateUser, setPage, config 
 			if (key==="fusionauth_id"){
 				return;
 			}
-			if (key==="uuid"){
+			if (key==="account_id"){
 				return;
 			}
 			if (user[key]==="") {
