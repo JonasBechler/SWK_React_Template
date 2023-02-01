@@ -1,6 +1,6 @@
 import React from 'react'
 
-module.exports = function ( config, setPage, setContent ){
+export default function ( config, setPage, setContent ){
 	const server_requests = require('../../server_handler/server_requests')(config)
 
 	return function ConnectAccounts() {

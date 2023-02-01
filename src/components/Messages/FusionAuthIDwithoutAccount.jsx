@@ -1,6 +1,6 @@
 import React from 'react'
 
-module.exports = function ( config, setPage, setContent ){
+export default  function ( config, setPage, setContent ){
 	return function FusionAuthIDwithoutAccount() {
 
 		function onCreateAccountHandler(e) {
