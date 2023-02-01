@@ -3,7 +3,7 @@ import FusionAuthIDwithoutAccount from "./FusionAuthIDwithoutAccount";
 import ConnectAccounts from "./ConnectAccounts"
 import NoServerConnection from "./NoServerConnection";
 
-module.exports = function ( config, setPage, setContent ) {
+export default function ( config, setPage, setContent ) {
     return {
         AccountwithoutFusionAuthID: AccountwithoutFusionAuthID(config, setPage, setContent),
         FusionAuthIDwithoutAccount: FusionAuthIDwithoutAccount(config, setPage, setContent),
