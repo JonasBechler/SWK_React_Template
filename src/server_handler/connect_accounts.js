@@ -3,7 +3,7 @@ module.exports = function(config){
 
         var url = new URL(`${config.device_ip}:${config.port}/api/connect`)
 
-        location.href = `${config.device_ip}:${config.port}/kn/connect`
+        window.location.href = `${config.device_ip}:${config.port}/kn/connect`
         
         
     }
