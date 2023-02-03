@@ -1,5 +1,6 @@
 import React from 'react'
-import AccountDetails from '../AccountDetails/AccountDetails'
+import AccountDetails from '../../components_basics/AccountDetails/AccountDetails'
+import LoginWithKonstanz from '../../components_basics/LoginWidget/LoginWithKonstanz';
 
 
 
@@ -8,13 +9,6 @@ export default function AccountWidget({title, details, user, setPage, config}) {
 
     const server_requests = require('../../server_handler/server_requests')(config)
 
-    
-    function loginHandler(e) {
-
-        e.preventDefault();
-        setPage(1);
-
-    }
 
     function logoutHandler(e) {
 
@@ -24,13 +18,7 @@ export default function AccountWidget({title, details, user, setPage, config}) {
 
     }
 
-    function connectKonstanzHandler(e) {
 
-        e.preventDefault();
-        
-        server_requests.login.with_konstanz()
-
-    }
     return (
         <div className='H_Center '>
             <div className='Groupbox Main_Item' style={{"backgroundColor": "#f5f5f5"}}>
@@ -57,13 +45,6 @@ export default function AccountWidget({title, details, user, setPage, config}) {
                         </div>
 
                         
-                        {user.knlogin_id?(
-                            <div></div>
-                        ):(
-                            <div className='H_Center'>
-                                <button className='Button Text' id='KonstanzRed' onClick={connectKonstanzHandler}>Konstanz-Login verbinden</button>
-                            </div>
-                        )}
 
                         <div className='Spacer'></div>
 
@@ -85,9 +66,7 @@ export default function AccountWidget({title, details, user, setPage, config}) {
                         <div className='Spacer'></div>
                         <div className='Spacer'></div>
                         
-                        <div className='H_Center'>
-                            <button className="Button Text" onClick={loginHandler}>Anmelden oder Registrieren</button>
-                        </div>
+                        <LoginWithKonstanz config={config}></LoginWithKonstanz>
                     </div>
 
                 )}

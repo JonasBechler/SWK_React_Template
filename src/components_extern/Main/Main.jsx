@@ -96,7 +96,6 @@ export default function Main({name, icon, config}) {
 			<div className='Spacer'></div>
 
 			{
-                //console.log("hi")
 				get_page_content()
 			}
 
