@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 
 import Header from "../Header/Header";
-import LoginWidget from "../LoginWidget/LoginWidget";
-import RegisterWidget from "../RegisterWidget/RegisterWidget";
+import RegisterWidget from "../../components_basics/RegisterWidget/RegisterWidget";
 import AccountWidget from '../AccountWidget/AccountWidget';
-import Message from '../Messages/Message';
-import Messages from '../Messages/Messages';
+import Message from '../../components_basics/Messages/Message';
+import Messages from '../../components_basics/Messages/Messages';
 
 
 
