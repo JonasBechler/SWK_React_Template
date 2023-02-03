@@ -1,6 +1,6 @@
 import React from 'react'
-import LoginWithAccountWidget from './LoginWithAccountWidget';
-import LoginWithKonstanz from './LoginWithKonstanz';
+import LoginWithAccountWidget from '../../components_basics/LoginWidget/LoginWithAccountWidget';
+import LoginWithKonstanz from '../../components_basics/LoginWidget/LoginWithKonstanz';
 
 export default function LoginWidget({ setPage, config }) {
 
