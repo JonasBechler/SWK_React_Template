@@ -15,6 +15,8 @@ export default function Main({name, icon, config}) {
 
 	const [details, setDetails] = useState();
 	const [user, setUser] = useState();
+	const [fusionAuth_data, setFusionAuth_data] = useState();
+
 	const [templateUser, setTemplateUser] = useState();
 	const [messageContent, setMessageContent] = useState();
 
@@ -53,6 +55,13 @@ export default function Main({name, icon, config}) {
 						setTemplateUser(response.blank_user);	
 					}
 
+					if (response_keys.includes("fusionAuth_data")){
+						setFusionAuth_data(response.fusionAuth_data);
+					}
+
+					else{
+						setFusionAuth_data();
+					}
 				})
 				.catch(error => {
 					setMessageContent(messages.NoServerConnection)
@@ -65,7 +74,7 @@ export default function Main({name, icon, config}) {
 		if (details){
 			
 			if (page === 0){
-				return <AccountWidget className='Main_Item' details={details} user={user} setPage={setPage} config={config}></AccountWidget>
+				return <AccountWidget className='Main_Item' details={details} user={user} setPage={setPage} config={config} fusionAuth_data={fusionAuth_data}></AccountWidget>
 			}
 			else if (page === 2){
 				return <RegisterWidget className='Main_Item' details={details} templateUser={templateUser} setPage={setPage} config={config}></RegisterWidget>
