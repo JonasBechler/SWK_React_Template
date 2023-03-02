@@ -52,7 +52,10 @@ export default function Header({ name, icon, page, setPage, showBackground, setS
 
 
 			<div className='V_Center' onClick={onAccountClickHandler}>
-				<img src={user_icon} alt="Logo" style={{"width":"50px", "height":"50px"}} />
+				<div style={{"backgroundColor":"white", "borderRadius": "10px", "padding": "5px"}}>
+					<img className="H_Center" src={user_icon} alt="Logo" style={{"width":"50px", "height":"50px"}} />
+				</div>
+				
 			</div>
 
 			<div className='Spacer'></div>
