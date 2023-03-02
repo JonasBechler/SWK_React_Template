@@ -32,7 +32,6 @@ export default function Main({name, icon, mainview, config}) {
 				.then(response => {
 					//check if is empty
 					let response_keys = Object.keys(response)
-					console.log(response);
 					if (response_keys.length === 0) {
 						// should not happen
 						console.log(messages.NoServerConnection);
