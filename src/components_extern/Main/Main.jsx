@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 
-import Header from "../Header/Header";
-import LoginWidget from "../LoginWidget/LoginWidget";
-import RegisterWidget from "../../components_basics/RegisterWidget/RegisterWidget";
-import AccountWidget from '../AccountWidget/AccountWidget';
+import Header from "../../components_basics/Header/Header";
+
 import Message from '../../components_basics/Messages/Message';
 import Messages from '../../components_basics/Messages/Messages';
+import UsingView from '../UsingView/UsingView';
 
 
 
-export default function Main({name, icon, config}) {
+export default function Main({name, icon, mainview, config}) {
 	const server_requests = require('../../server_handler/server_requests')(config)
 
+	const [showBackground, setShowBackground] = useState(true);
     const [page, setPage] = useState(0);
 
 	const [details, setDetails] = useState();
@@ -82,34 +82,29 @@ export default function Main({name, icon, config}) {
 		}
 	}, [page]);
 
-	const get_page_content = _ => {
-		if (details){
-			if (page === 0){
-				return <AccountWidget className='Main_Item' details={details} user={user} setPage={setPage} config={config} fusionAuth_data={fusionAuth_data}></AccountWidget>
-			}
-			else if (page === 1){
-				return <LoginWidget className='Main_Item' setPage={setPage} config={config}></LoginWidget>
-			}
-			else if (page === 2){
-				return <RegisterWidget className='Main_Item' details={details} templateUser={templateUser} setPage={setPage} config={config}></RegisterWidget>
-			}
-		}
-	}
+	
 
 	return (
 
 		<div className='Fill Column'>
 			<Message content={messageContent} setContent={setMessageContent}></Message>
 
-			<Header name={name} icon={icon} setPage={setPage}></Header>
+			<Header name={name} icon={icon} page={page} setPage={setPage} showBackground={showBackground} setShowBackground={setShowBackground} isExtern={true}></Header>
 
-			<div className='Spacer'></div>
+			<UsingView 
+				mainview={mainview} 
+				page={page} 
+				setPage={setPage} 
+				showBackground={showBackground}
+				setShowBackground={setShowBackground}
+				details={details} 
+				user={user} 
+				fusionAuth_data={fusionAuth_data} 
+				templateUser={templateUser} 
+				config={config}>
 
-			{
-				get_page_content()
-			}
+			</UsingView>
 
-			<div className='Spacer'></div>
 			<div className='Spacer'></div>
 
 		</div>
