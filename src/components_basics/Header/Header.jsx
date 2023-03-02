@@ -50,15 +50,22 @@ export default function Header({ name, icon, page, setPage, showBackground, setS
 
 			<div className='Spacer'></div>
 
-
-			<div className='V_Center' onClick={onAccountClickHandler}>
-				<div style={{"backgroundColor":"white", "borderRadius": "10px", "padding": "5px"}}>
-					<img className="H_Center" src={user_icon} alt="Logo" style={{"width":"50px", "height":"50px"}} />
+			{(setPage === undefined)?(
+			<></>
+			):(
+			<>
+				<div className='V_Center' onClick={onAccountClickHandler}>
+					<div style={{"backgroundColor":"white", "borderRadius": "10px", "padding": "5px"}}>
+						<img className="H_Center" src={user_icon} alt="Logo" style={{"width":"50px", "height":"50px"}} />
+					</div>
+					
 				</div>
-				
-			</div>
 
-			<div className='Spacer'></div>
+				<div className='Spacer'></div>
+			</>
+			)}
+
+			
 		</div>
 	)
 }
