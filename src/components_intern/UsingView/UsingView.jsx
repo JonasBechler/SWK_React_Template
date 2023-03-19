@@ -41,7 +41,7 @@ export default function UsingView({ mainview, page, setPage, showBackground, set
 
     return (
 		<div className='H_Center'>
-			<img src={mainview} alt="Logo" style={{"width":"100%", "height":"100%"}}/>
+			<img src={mainview} alt="Logo" style={{"width":"100%", "height":"100%"}} onClick={ _ => {setShowBackground(true)}}/>
 
 			
             <div style={{"position":"absolute"}}>
